@@ -1,0 +1,260 @@
+/* ============================================================
+   LoginPage.css — Research Pro  |  Academic Refined Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
+
+/* ─── Page Shell ───────────────────────────────────────────── */
+.lp {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  position: relative;
+  overflow: hidden;
+  background: #0f0d1a;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── Background ───────────────────────────────────────────── */
+.lp-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lp-bg__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+}
+
+.lp-bg__orb--1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, #4f3aff 0%, transparent 70%);
+  top: -160px;
+  left: -120px;
+  animation: orbDrift 14s ease-in-out infinite alternate;
+}
+
+.lp-bg__orb--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #9b2dff 0%, transparent 70%);
+  bottom: -100px;
+  right: -80px;
+  animation: orbDrift 18s ease-in-out infinite alternate-reverse;
+}
+
+.lp-bg__orb--3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #1a9fff 0%, transparent 70%);
+  top: 40%;
+  right: 20%;
+  animation: orbDrift 10s ease-in-out infinite alternate;
+}
+
+@keyframes orbDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 20px) scale(1.05); }
+}
+
+/* Fine dot grid */
+.lp-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* ─── Floating Decorative Pills ────────────────────────────── */
+.lp-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lp-deco__pill {
+  position: absolute;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 5px 12px;
+  border-radius: 99px;
+  white-space: nowrap;
+  animation: pillFloat 8s ease-in-out infinite;
+}
+
+.lp-deco__pill--1 { top: 12%; left: 5%;  animation-delay: 0s; }
+.lp-deco__pill--2 { top: 22%; right: 6%; animation-delay: 2s; }
+.lp-deco__pill--3 { bottom: 18%; left: 7%; animation-delay: 4s; }
+.lp-deco__pill--4 { bottom: 28%; right: 5%; animation-delay: 1s; }
+
+@keyframes pillFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%       { transform: translateY(-8px); opacity: 1; }
+}
+
+/* ─── Card Wrapper ─────────────────────────────────────────── */
+.lp-card-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: cardRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardRise {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* ─── Card ─────────────────────────────────────────────────── */
+.lp-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  padding: 36px 36px 28px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 24px 48px rgba(0,0,0,0.45),
+    0 2px 4px rgba(0,0,0,0.2);
+  backdrop-filter: blur(24px);
+}
+
+/* ─── Card Header ──────────────────────────────────────────── */
+.lp-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.lp-logo {
+  width: 62px;
+  height: 62px;
+  background: linear-gradient(135deg, #4f3aff 0%, #9b2dff 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(79, 58, 255, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.lp-logo:hover {
+  transform: rotate(6deg) scale(1.06);
+  box-shadow: 0 12px 28px rgba(79, 58, 255, 0.6);
+}
+
+.lp-card__title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 27px;
+  font-weight: 600;
+  color: #1e1b3a;
+  margin: 0 0 8px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.lp-card__title em {
+  font-style: italic;
+  color: #4f3aff;
+}
+
+.lp-card__subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+/* ─── Card Body ────────────────────────────────────────────── */
+
+
+/* ─── Card Footer ──────────────────────────────────────────── */
+.lp-card__footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f5;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.lp-link {
+  color: #4f3aff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.lp-link:hover { color: #7c6af5; text-decoration: underline; }
+
+/* ─── Trust Bar ────────────────────────────────────────────── */
+.lp-trust {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255,255,255,0.45);
+  font-size: 12.5px;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.2px;
+  animation: cardRise 0.6s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.lp-trust__item strong {
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+  margin-right: 3px;
+}
+
+.lp-trust__sep { opacity: 0.3; font-size: 18px; line-height: 1; }
+
+/* ─── Responsive ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .lp-card {
+    padding: 28px 22px 22px;
+    border-radius: 16px;
+  }
+
+  .lp-card__title { font-size: 23px; }
+  .lp-card__subtitle { font-size: 13px; }
+
+  .lp-logo {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .lp-deco__pill { display: none; }
+  .lp-trust { flex-wrap: wrap; justify-content: center; gap: 8px; }
+}
+
+@media (max-height: 680px) {
+  .lp { padding: 16px; }
+  .lp-card { padding: 24px 28px 20px; }
+  .lp-card__header { margin-bottom: 20px; }
+  .lp-logo { margin-bottom: 14px; }
+}

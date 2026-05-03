@@ -1,0 +1,329 @@
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.loader-sm {
+  width: 20px;
+  height: 20px;
+}
+
+.loader-lg {
+  width: 60px;
+  height: 60px;
+}
+
+.loader-xl {
+  width: 80px;
+  height: 80px;
+}
+
+.loader-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: spin 1s linear infinite;
+}
+
+.loader-sm .loader-spinner {
+  border-width: 2px;
+}
+
+.loader-lg .loader-spinner {
+  border-width: 6px;
+}
+
+.loader-xl .loader-spinner {
+  border-width: 8px;
+}
+
+.loader-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-dot {
+  width: 8px;
+  height: 8px;
+  background: #007bff;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loader-sm .loader-dot {
+  width: 4px;
+  height: 4px;
+}
+
+.loader-lg .loader-dot {
+  width: 12px;
+  height: 12px;
+}
+
+.loader-xl .loader-dot {
+  width: 16px;
+  height: 16px;
+}
+
+.loader-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loader-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.loader-dot:nth-child(3) {
+  animation-delay: 0;
+}
+
+.loader-pulse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-pulse-circle {
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loader-sm .loader-pulse-circle {
+  width: 10px;
+  height: 10px;
+}
+
+.loader-lg .loader-pulse-circle {
+  width: 30px;
+  height: 30px;
+}
+
+.loader-xl .loader-pulse-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.loader-bars {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-bar {
+  width: 4px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 2px;
+  animation: bars 1.2s ease-in-out infinite;
+}
+
+.loader-sm .loader-bar {
+  width: 2px;
+  height: 10px;
+}
+
+.loader-lg .loader-bar {
+  width: 6px;
+  height: 30px;
+}
+
+.loader-xl .loader-bar {
+  width: 8px;
+  height: 40px;
+}
+
+.loader-bar:nth-child(1) {
+  animation-delay: -1.2s;
+}
+
+.loader-bar:nth-child(2) {
+  animation-delay: -1.1s;
+}
+
+.loader-bar:nth-child(3) {
+  animation-delay: -1.0s;
+}
+
+.loader-bar:nth-child(4) {
+  animation-delay: -0.9s;
+}
+
+.loader-bar:nth-child(5) {
+  animation-delay: -0.8s;
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-text {
+  margin-top: 12px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.loader-sm .loader-text {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.loader-lg .loader-text {
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.loader-xl .loader-text {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.loader-success .loader-spinner {
+  border-top-color: #28a745;
+}
+
+.loader-success .loader-dot {
+  background: #28a745;
+}
+
+.loader-success .loader-pulse-circle {
+  background: #28a745;
+}
+
+.loader-success .loader-bar {
+  background: #28a745;
+}
+
+.loader-danger .loader-spinner {
+  border-top-color: #dc3545;
+}
+
+.loader-danger .loader-dot {
+  background: #dc3545;
+}
+
+.loader-danger .loader-pulse-circle {
+  background: #dc3545;
+}
+
+.loader-danger .loader-bar {
+  background: #dc3545;
+}
+
+.loader-warning .loader-spinner {
+  border-top-color: #ffc107;
+}
+
+.loader-warning .loader-dot {
+  background: #ffc107;
+}
+
+.loader-warning .loader-pulse-circle {
+  background: #ffc107;
+}
+
+.loader-warning .loader-bar {
+  background: #ffc107;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes bars {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1.0);
+  }
+}
+
+.loader-inline {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.loader-block {
+  display: flex;
+  width: 100%;
+}
+
+.loader-fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .loader-overlay {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  
+  .loader-text {
+    font-size: 12px;
+  }
+  
+  .loader-lg .loader-text {
+    font-size: 14px;
+  }
+  
+  .loader-xl .loader-text {
+    font-size: 16px;
+  }
+}

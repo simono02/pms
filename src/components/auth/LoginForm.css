@@ -1,0 +1,257 @@
+/* ============================================================
+   LoginForm.css — Research Pro  |  Academic Refined Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ─── Alert Banner ─────────────────────────────────────────── */
+.lf-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  animation: alertSlideDown 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes alertSlideDown {
+  from { opacity: 0; transform: translateY(-10px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.lf-alert--success {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 1px solid #6ee7b7;
+  color: #065f46;
+}
+
+.lf-alert--error {
+  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+  border: 1px solid #fca5a5;
+  color: #9f1239;
+}
+
+.lf-alert__icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lf-alert--success .lf-alert__icon {
+  background: #059669;
+  color: white;
+}
+
+.lf-alert--error .lf-alert__icon {
+  background: #e11d48;
+  color: white;
+}
+
+.lf-alert__message { flex: 1; line-height: 1.4; }
+
+.lf-alert__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0.5;
+  padding: 0 2px;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+.lf-alert__close:hover { opacity: 1; }
+
+/* ─── Form ─────────────────────────────────────────────────── */
+.lf { display: flex; flex-direction: column; }
+.lf--loading { opacity: 0.7; pointer-events: none; }
+
+/* ─── Field ────────────────────────────────────────────────── */
+.lf-field { margin-bottom: 18px; }
+
+.lf-label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 7px;
+}
+
+/* ─── Input Wrapper ────────────────────────────────────────── */
+.lf-input-wrap { position: relative; }
+
+.lf-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14.5px;
+  color: #1e293b;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.lf-input::placeholder { color: #94a3b8; }
+
+.lf-input:focus {
+  background: #fff;
+  border-color: #7c6af5;
+  box-shadow: 0 0 0 3px rgba(124, 106, 245, 0.12);
+}
+
+.lf-input--error {
+  border-color: #f87171 !important;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.1) !important;
+}
+
+.lf-input--has-toggle { padding-right: 46px; }
+
+/* ─── Eye Toggle ───────────────────────────────────────────── */
+.lf-eye-btn {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 0;
+}
+
+.lf-eye-btn:hover {
+  color: #475569;
+  background: rgba(0,0,0,0.04);
+}
+
+.lf-eye-btn--active {
+  color: #7c6af5;
+}
+.lf-eye-btn--active:hover { color: #6354e0; }
+
+/* ─── Error Message ────────────────────────────────────────── */
+.lf-error-msg {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #dc2626;
+  margin: 6px 0 0 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lf-error-msg::before { content: '↑'; font-size: 10px; }
+
+/* ─── Options Row ──────────────────────────────────────────── */
+.lf-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.lf-remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.lf-checkbox {
+  width: 15px;
+  height: 15px;
+  accent-color: #7c6af5;
+  cursor: pointer;
+}
+
+.lf-checkbox-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lf-forgot {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #7c6af5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.lf-forgot:hover { color: #5b47d4; text-decoration: underline; }
+
+/* ─── Submit Button ────────────────────────────────────────── */
+.lf-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #7c6af5 0%, #9b7df8 50%, #6354e0 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: background-position 0.4s ease, box-shadow 0.3s, transform 0.2s;
+  box-shadow: 0 4px 14px rgba(124, 106, 245, 0.4);
+  position: relative;
+}
+
+.lf-submit:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 6px 20px rgba(124, 106, 245, 0.55);
+  transform: translateY(-1px);
+}
+
+.lf-submit:active { transform: translateY(0); }
+.lf-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ─── Spinner ──────────────────────────────────────────────── */
+.lf-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Responsive ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .lf-options { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
